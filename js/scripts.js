@@ -1,4 +1,7 @@
-function newItem() {
+function newItem(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+  
     // Adding a new item to the list of items:
     let li = $('<li></li>');
     let inputValue = $('#input').val();
@@ -23,89 +26,13 @@ function newItem() {
       li.addClass("delete");
     });
   
+    // Clear the input field after adding an item
+    $('#input').val('');
+  
     // Reordering the items:
     $('#list').sortable();
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// =============================== Vanilla Js ====================================
-
-// function newItem(){
-//     let li = document.createElement("li");
-//     let inputValue = document.getElementById("input").value;
-//     let text = document.createTextNode(inputValue);
-//     li.appendChild(text);
-
-//     if(inputValue === ''){
-//         alert('You must write something')
-//     }else{
-//         let list= document.querySelector('#list');
-//         list.appendChild(li);
-//     }
-
-//     function crossOut(){
-//         li.classList.toggle('strike');
-
-//     }
-//     li.addEventListener('dblclick', crossOut);
-
-//     // adding delete button 'X'
-//     let crossOutButton = document.createElement('button');
-//     crossOutButton.appendChild(document.createTextNode('X'));
-//     li.appendChild(crossOutButton);
-
-//     crossOutButton.addEventListener('click', deleteListItem);
-
-//     // adding class as 'delete' in the list of item
-//     function deleteListItem(){
-//         li.classList.add('delete');
-//     }
-
-//     // 4. Reordering the items: 
-//   $('#list').sortable();
-
-
-// }
+  // Bind the function to the form submit event
+  $('form[name="toDoList"]').submit(newItem);
+  

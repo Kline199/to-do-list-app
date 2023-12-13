@@ -5,15 +5,13 @@ font: normal normal 13px/16px "Open Sans", sans-serif;
 background: #dfdfdf;
 }
 
-.Container {
-
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 40px;
-    background: white;
-    border-radius: 5px;
-}
+.container{
+padding: 20px;
+width: 300px;
+margin: 0 auto;
+margin-top: 40px;
+background: white;
+border-radius: 5px;}
 
 form {
 display: inline-block;
